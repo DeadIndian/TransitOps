@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/Button";
 // sign-out is an inline server action calling NextAuth's signOut.
 export function Topbar({ name, role }: { name: string; role: string }) {
   return (
-    <header className="h-14 shrink-0 flex items-center justify-end gap-4 px-6 border-b-[3px] border-ink bg-[var(--surface)]">
+    <header className="h-14 shrink-0 flex items-center justify-end gap-4 pl-14 pr-4 sm:px-6 border-b-[3px] border-ink bg-[var(--surface)]">
       <div className="flex items-center gap-2">
         <span className="inline-block h-7 w-7 bg-brand border-2 border-ink rounded-[3px]" />
         <div className="leading-tight">

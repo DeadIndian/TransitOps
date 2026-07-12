@@ -1,5 +1,6 @@
 import { redirect } from "next/navigation";
 import { auth } from "@/core/security/auth";
+import { navFor } from "@/core/security/rbac";
 import { Sidebar } from "./Sidebar";
 import { Topbar } from "./Topbar";
 
@@ -12,10 +13,10 @@ export async function AppShell({ children }: { children: React.ReactNode }) {
 
   return (
     <div className="flex min-h-screen">
-      <Sidebar role={session.user.role} />
+      <Sidebar items={navFor(session.user.role)} />
       <div className="flex flex-col flex-1 min-w-0">
         <Topbar name={session.user.name ?? "User"} role={session.user.role} />
-        <main className="flex-1 p-6 max-w-[1280px] w-full mx-auto">{children}</main>
+        <main className="flex-1 p-4 sm:p-6 max-w-[1280px] w-full mx-auto">{children}</main>
       </div>
     </div>
   );
