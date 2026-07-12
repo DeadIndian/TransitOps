@@ -1,26 +1,63 @@
 @import "tailwindcss";
 
+/* ── Neo-Brutalist × Comic theme tokens (plan §5) ──────────────────── */
+@theme {
+  --font-comic: var(--font-comic-neue), "Comic Sans MS", "Chalkboard SE", system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), "IBM Plex Mono", ui-monospace, Menlo, monospace;
+
+  --color-ink: #0b0b0b;
+  --color-paper: #faf7f0;
+  --color-paper-2: #ffffff;
+  --color-panel: #15161b;
+  --color-panel-2: #1e2029;
+  --color-panel-3: #2a2d38;
+  --color-brand: #e8811a;
+  --color-brand-hi: #f59e0b;
+
+  /* status pill colors (map to PillColor union in constants.ts) */
+  --color-green: #22c55e;
+  --color-blue: #3b82f6;
+  --color-orange: #f59e0b;
+  --color-redpink: #f472b6;
+  --color-red: #ef4444;
+  --color-grey: #9ca3af;
+
+  --color-pop-blue: #2563eb;
+  --color-pop-lime: #a3e635;
+  --color-pop-violet: #8b5cf6;
+  --color-pop-yellow: #fde047;
+
+  --shadow-brutal: 4px 4px 0 #0b0b0b;
+  --shadow-brutal-lg: 6px 6px 0 #0b0b0b;
+  --shadow-brutal-sm: 2px 2px 0 #0b0b0b;
+  --radius-brutal: 4px;
+}
+
+/* Dark cockpit is the default theme; `.light` flips to paper + ink. */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: var(--color-panel);
+  --surface: var(--color-panel-2);
+  --surface-2: var(--color-panel-3);
+  --fg: #f4f1e9;
+  --fg-dim: #9a9ead;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.light {
+  --bg: var(--color-paper);
+  --surface: var(--color-paper-2);
+  --surface-2: #f0ece2;
+  --fg: #0b0b0b;
+  --fg-dim: #6b6b6b;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-comic);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
 }

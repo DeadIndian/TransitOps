@@ -1,8 +1,3 @@
-import { NextResponse } from "next/server";
+import { handlers } from "@/core/security/auth";
 
-// TODO: replace with NextAuth handlers once auth provider chosen
-export async function GET() {
-  return NextResponse.json({ error: "not configured" }, { status: 501 });
-}
-
-export const POST = GET;
+export const { GET, POST } = handlers;
