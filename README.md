@@ -1,4 +1,4 @@
-# 🚚 TransitOps
+# 🚚 TransitOps (Work in progress)
 
 **Smart Transport Operations Platform** — a role-gated, rule-enforcing web app to manage the full lifecycle of transport operations: vehicles, drivers, dispatch, maintenance, fuel & expenses, with live operational insight.
 
